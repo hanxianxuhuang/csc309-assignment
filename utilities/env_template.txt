@@ -1,0 +1,3 @@
+TOKEN_SECRET=**something**
+DATABASE_URL=**postgres://...**
+PORT=**7777**
