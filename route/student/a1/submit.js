@@ -21,7 +21,7 @@ router.post("/submit", rate_limit.upload_limiter, upload.any(), (req, res) => {
     } else if (!("acknowledge" in req.body)) {
         res.status(400).json({ message: fail_message })
     } else {
-        res.status(400).json({ message: "Sanity check passes. This doesn't guarantee your request is correct though." })
+        res.status(200).json({ message: "Sanity check passes. This doesn't guarantee your request is correct though." })
     }
 })
 
