@@ -3,7 +3,7 @@ const router = express.Router();
 const client = require("../../../setup/db");
 const rate_limit = require("../../../setup/rate_limit");
 
-router.post("/register", (req, res) => {
+router.post("/register", rate_limit.upload_limiter, (req, res) => {
     if (!("username" in req.body) || req.body["username"] === "") {
         res.status(400).json({ message: "Username is not valid." });
     } else {
