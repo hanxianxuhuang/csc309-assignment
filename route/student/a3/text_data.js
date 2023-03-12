@@ -10,7 +10,7 @@ router.get("/text/data", (req, res) => {
         client.query(sql_text, [req.query["paragraph"]], (err, pgRes) => {
             if (err) {
                 res.status(404).json({ message: "Unknown error." });
-            } else if (parseInt(req.query["paragraph"]) + 5 > 40) {
+            } else if (parseInt(req.query["paragraph"]) + 5 > 50) {
                 res.json({ data: pgRes.rows, next: false });
             } else {
                 res.json({ data: pgRes.rows, next: true });

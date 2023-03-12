@@ -4,9 +4,9 @@ const registerRouter = require("./a3/register");
 const textDataRouter = require("./a3/text_data");
 const textLikesRouter = require("./a3/text_likes");
 
-router.use("/", function (req, res, next) {
-    res.status(403).json({message: "You don't have access to this page."});
-})
+// router.use("/", function (req, res, next) {
+//     res.status(403).json({message: "You don't have access to this page."});
+// })
 
 router.use("/", registerRouter);
 router.use("/", textDataRouter);
